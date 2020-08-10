@@ -1,8 +1,13 @@
 # Hướng dẫn cài đặt Ceph sử dụng Ceph-ansible
 ## 1. Git Clone
-
-## 2. Sửa file inventory, thay đổi `IP` và `hostname` theo topo của mình
 ```sh
+https://github.com/VNPT-SmartCloud-System/ceph-ansible.git
+cd ceph-ansible
+```
+## 2. Sửa file inventory, thay đổi `IP` và `hostname` theo topo của mình
+
+```sh
+$ vim inventory.yml
 [mons]
 ceph01 ansible_host=192.168.40.141
 ceph02 ansible_host=192.168.40.142
@@ -20,6 +25,7 @@ ceph03 ansible_host=192.168.40.143
 ```
 ## 3. Sửa file group_vars/all.yml như sau
 ```sh
+$ vim group_vars/all.yml
 dummy:
 ceph_origin: repository
 ceph_repository: community
@@ -53,4 +59,8 @@ openstack_pools:
 dashboard_protocol: https
 dashboard_admin_user: admin
 dashboard_admin_password: admin
+```
+## 3. Thực hiện deploy
+```sh
+ansible-playbook playbook.yml -i inventory.yml
 ```
