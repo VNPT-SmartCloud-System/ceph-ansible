@@ -1,4 +1,4 @@
-# Hướng dẫn cài đặt Ceph sử dụng Ceph-ansible
+# Hướng dẫn cài đặt Ceph Nautilus sử dụng Ceph-ansible
 ## 1. Git Clone
 ```sh
 https://github.com/VNPT-SmartCloud-System/ceph-ansible.git
