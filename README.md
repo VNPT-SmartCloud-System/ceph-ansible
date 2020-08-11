@@ -72,7 +72,7 @@ openstack_pools:
   - "{{ openstack_nova_pool }}"
   - "{{ openstack_cinder_backup_pool }}"
 ```
-### 3.6 Khai báo account/password cho Ceph-dashboard**
+### 3.6 Khai báo account/password cho Ceph-dashboard
 ```sh
 dashboard_admin_user: admin
 dashboard_admin_password: admin
