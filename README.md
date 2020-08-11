@@ -29,7 +29,7 @@ ceph03 ansible_host=192.168.20.143
 ```sh
 $ vim group_vars/all.yml
 ```
-- **Khai báo Network cho Ceph**
+### 3.1 Khai báo Network cho Ceph
 ```sh
 monitor_address_block: 192.168.40.0/24
 public_network: 192.168.40.0/24
@@ -40,11 +40,11 @@ Trong đó:
 - cluster_network: Replicate dữ liệu giữa các OSD
 - monitor_address_block: Dải network cho Monitor
 
-- **Khai báo backend cho Ceph**
+### 3.2 Khai báo backend cho Ceph**
 ```sh
 osd_objectstore: filestore
 ```
-- **Khai báo OSD cho Ceph**
+### 3.3 Khai báo OSD cho Ceph**
 ```sh
 devices:
   - '/dev/vdb'
@@ -56,7 +56,7 @@ Trong đó:
 - devices: Danh sách device sử dụng làm OSD
 - dedicated_devices: Danh sách device sử dụng làm filestore
 
-- **Khai báo cấu hình cho Ceph**
+### 3.4 Khai báo cấu hình cho Ceph**
 ceph_conf_overrides:
  global:
    osd_pool_default_size: 2
@@ -73,7 +73,7 @@ openstack_pools:
 dashboard_admin_user: admin
 dashboard_admin_password: admin
 ```
-## 3. Thực hiện deploy
+## 4. Thực hiện deploy
 ```sh
 ansible-playbook playbook.yml -i inventory.yml
 ```
